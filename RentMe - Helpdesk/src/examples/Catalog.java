@@ -39,9 +39,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Catalog", propOrder = {
     "catalogID",
-    "make",
+    "make", 
     "model",
-    "location"
+    "location" /* this is the location*/
 })
 public class Catalog {
 
