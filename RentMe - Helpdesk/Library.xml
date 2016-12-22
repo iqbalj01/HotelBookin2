@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--  Our one element xml document, describing one instance of a Library object --><hotelRental>      <!-- the one libraryobject containing all the info -->
+
+<!-- an attribute,named,     of the type  --> 
+	<hotelRentalID>123</hotelRentalID>
+	<name>RentMe</name>
+	<city>London</city>
+	<address> 19 Wilsons Road</address>
+	<postcode>SW17 9AY</postcode>
+
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>12345</hotelID>              <!-- And its attributes -->
+		<make>BMW</make>
+		<model> 3 Series </model>
+		<location>London</location>
+		<type>saloon</type> 
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>12345</hotelID>              <!-- And its attributes -->
+		<make>BMW</make>
+		<model> 5 Series </model>
+		<location>london</location>
+		<type>saloon</type> 
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>21111</hotelID>              <!-- And its attributes -->
+		<make>Mercedes</make>
+		<model> E230 </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>21215</hotelID>              <!-- And its attributes -->
+		<make>Mercedes</make>
+		<model> C220 </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>12554</hotelID>              <!-- And its attributes -->
+		<make>Ford</make>
+		<model> Fiesta </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>18944</hotelID>              <!-- And its attributes -->
+		<make>Audi</make>
+		<model> Astra </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>14444</hotelID>              <!-- And its attributes -->
+		<make>Volkswagen</make>
+		<model> Polo </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>22344</hotelID>              <!-- And its attributes -->
+		<make>Nissan</make>
+		<model> Micra </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>12856</hotelID>              <!-- And its attributes -->
+		<make>Citren</make>
+		<model> C5 </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>14754</hotelID>              <!-- And its attributes -->
+		<make>Porsche</make>
+		<model> 911 </model>
+		<location>london</location>
+	</hotel>
+	<hotel>                                       <!-- An Instance of a hotel -->
+		<hotelID>16944</hotelID>              <!-- And its attributes -->
+		<make>Skoda</make>
+		<model> Octovia </model>
+		<location>london</location>
+	</hotel>
+	
+<!-- This is where Lending starts -->
+	<lending>
+		<hotelID>12345</hotelID>
+		<lendid>001</lendid>
+		<dateOfStart>11/01/2016</dateOfStart>
+		<dateOfEnd>16/01/2016</dateOfEnd>
+		<periodOfRent>5 Days</periodOfRent>
+		<customername>John Smith</customername>
+	</lending>
+	
+	<lending>
+		<lendid>002</lendid>
+		<dateOfStart>2011</dateOfStart>
+		<dateOfEnd>2012</dateOfEnd>
+		<periodOfRent>2 Days</periodOfRent>
+		<customername>John Smith</customername>
+		<hotelID>18944</hotelID>
+	</lending>
+
+
+<!-- This is where employee starts -->	
+	<customer>
+		<FName> Jonni </FName>
+		<SName> Asfaha</SName>
+		
+
+		<Address> 44 test Street</Address>
+		<DOB>44/12/2016 </DOB>
+		<hotelID>12345</hotelID>
+		<Email> ww@hotmail.co.uk</Email>
+		<Postcode>sl1 2ee </Postcode>
+		<MobileNo> 07866552266 </MobileNo>
+		
+	</customer>
+
+
+<!-- This is where employee starts -->		
+	<Employee>
+		<employeeID>21226018</employeeID>
+		<fName>John</fName>
+		<sName>Smith</sName>
+		<email>johnsmith@rentme.com</email>
+		<mobileNo>07956772598</mobileNo>
+	</Employee>
+	
+	
+	<reservation>
+		<customers id="abdul2016-01-11-23-20">
+			<name>abdul</name>
+			<chosenmake>Ford</chosenmake>
+			<rentalstartdate>11-01-2016</rentalstartdate>
+			<timestamp>23:20</timestamp>
+			<rentalperiodindays>3 days</rentalperiodindays>
+		</customers>
+	</reservation>
+</hotelRental><!-- closing the one libraryobject conatining alle the info -->

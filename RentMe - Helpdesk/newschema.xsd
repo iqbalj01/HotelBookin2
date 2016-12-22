@@ -1,0 +1,150 @@
+
+<xsd:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" version="1.0"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		
+	<!-- Our xml document expects one element containing all info on the library -->
+	
+	<!-- the word "type" can be read as "class" -->
+	
+	<!-- a thing, which is called, of the type= x --> 
+	<xsd:element name="hotelRental" type=" hotelRental" />
+		
+	<!--  Define the "class" (complexType) library -->
+	<xsd:complexType name="hotelRental">
+	
+		<!-- this "class" expects a sequence of elements ("attributes") -->
+		<xsd:sequence>
+		
+		<!-- an attribute,named,     of the type  --> 
+			<xsd:element name="hotelRentalID" type="xsd:string" />
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="city" type="xsd:string" />
+			<xsd:element name="address" type="xsd:string" />
+			<xsd:element name="postcode" type="xsd:string" />
+			
+		<!-- Attributes which are holding instances of classes  -->
+		<!-- an attribute, that can have many instances  ,named,     of the type(Class)  -->
+			<xsd:element maxOccurs="unbounded" name="hotel" type="hotel" />		
+			<xsd:element maxOccurs="unbounded" name="customer" type="Customer" />	
+			<xsd:element maxOccurs="unbounded" name="employee" type="Employee" />
+			<xsd:element maxOccurs="unbounded" name="catalog" type="Catalog" />
+			<xsd:element maxOccurs="unbounded" name="reservation" type="Reservation" /> 
+			<xsd:element maxOccurs="unbounded" name="location" type="Location" />
+			<xsd:element maxOccurs="unbounded" name="insurance" type="Insurance" />
+			<xsd:element maxOccurs="unbounded" name="lending" type="Lending" />
+			<xsd:element maxOccurs="unbounded" name="payment" type="Payment" />
+			
+		</xsd:sequence>
+		
+	</xsd:complexType> <!-- Description of the Class Library ends here  -->
+
+	<!-- Define the classes mentioned in Library and their attributes -->
+	
+	<!--  declaration of the "class" Book -->
+	<xsd:complexType name="hotel">
+	
+		<!--  Declaration of the Attributes of the Class Book -->
+		<xsd:sequence>
+		
+		<!-- an attribute,named,       of the type  --> 
+			<xsd:element name="hotelID" type="xsd:string" />
+			<xsd:element name="make" type="xsd:string" />
+			<xsd:element name="model" type="xsd:string" />
+			<xsd:element name="transmission" type="xsd:string" />
+			<xsd:element name="noOfDoors" type="xsd:int" />
+			<xsd:element name="fuelType" type="xsd:string" />
+			<xsd:element name="noOfSeats" type="xsd:int" /><!-- lendid (when lend) OR null (when available) -->
+		</xsd:sequence>
+	</xsd:complexType>   <!--  Declaration of the Class Book done -->
+	
+	<xsd:complexType name="Customer">
+		<xsd:sequence>
+			<xsd:element name="customerID" type="xsd:string" />
+			<xsd:element name="fName" type="xsd:string" />
+			<xsd:element name="sName" type="xsd:string" />
+			<xsd:element name="address" type="xsd:integer" />
+			<xsd:element name="DOB" type="xsd:date" />
+			<xsd:element name="email" type="xsd:string" />
+			<xsd:element name="mobileNo" type="xsd:int" />
+			<xsd:element name="postcode" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Employee">
+		<xsd:sequence>
+			<xsd:element name="employeeID" type="xsd:string" />
+			<xsd:element name="fName" type="xsd:string" />
+			<xsd:element name="sName" type="xsd:string" />
+			<xsd:element name="address" type="xsd:string" />
+			<xsd:element name="email" type="xsd:string" />
+			<xsd:element name="mobileNo" type="xsd:int" />
+			<xsd:element name="postcode" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Catalog">
+		<xsd:sequence>
+			<xsd:element name="catalogID" type="xsd:string" />
+			<xsd:element name="make" type="xsd:string" />
+			<xsd:element name="model" type="xsd:string" />
+			<xsd:element name="location" type="xsd:string" /><!-- isbn#isbn#isbn#....... -->
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Lending">
+		<xsd:sequence>
+			<xsd:element name="lendID	" type="xsd:string" />
+			<xsd:element name="customerID" type="xsd:string" />
+			<xsd:element name="periodOfRent" type="xsd:string" />
+			<xsd:element name="dateOfStart" type="xsd:date" />
+			<xsd:element name="dateOfEnd" type="xsd:date" />
+			<xsd:element name="hotelRentalID" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Payment">
+		<xsd:sequence>
+			<xsd:element name="hoteldNo" type="xsd:int" />
+			<xsd:element name="expiryDate" type="xsd:date" />
+			<xsd:element name="securityCode" type="xsd:int" />
+			<xsd:element name="hoteldType" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Reservation">
+		<xsd:sequence>
+			<xsd:element name="reservationID" type="xsd:string" />
+			<xsd:element name="price" type="xsd:int" />
+			<xsd:element name="availability" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Insurance">
+		<xsd:sequence>
+			<xsd:element name="insuranceID" type="xsd:string" />
+			<xsd:element name="priceOfExcess" type="xsd:int" />
+			<xsd:element name="policyDetails" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Location">
+		<xsd:sequence>
+			<xsd:element name="address" type="xsd:string" />
+			<xsd:element name="mobileNo" type="xsd:int" />
+			<xsd:element name="openHours" type="xsd:int" />			
+			<xsd:element name="postcode" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	
+	
+	
+<!--  All Classes defined now, lets close the Schema  -->
+
+</xsd:schema>
+
+
+
