@@ -28,7 +28,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="lendID " type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="customerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="periodOfRent" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="periodOfStay" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="dateOfStart" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="dateOfEnd" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="customername" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -44,7 +44,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "Lending", propOrder = {
     "lendID0020",
     "customerID",
-    "periodOfRent",
+    "periodOfStay",
     "dateOfStart",
     "dateOfEnd",
     "customername",
@@ -57,7 +57,7 @@ public class Lending {
     @XmlElement(required = true)
     protected String customerID;
     @XmlElement(required = true)
-    protected String periodOfRent;
+    protected String periodOfStay;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dateOfStart;
@@ -121,27 +121,27 @@ public class Lending {
     
 
     /**
-     * Gets the value of the periodOfRent property.
+     * Gets the value of the periodOfStay property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPeriodOfRent() {
-        return periodOfRent;
+    public String getperiodOfStay() {
+        return periodOfStay;
     }
 
     /**
-     * Sets the value of the periodOfRent property.
+     * Sets the value of the periodOfStay property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPeriodOfRent(String value) {
-        this.periodOfRent = value;
+    public void setperiodOfStay(String value) {
+        this.periodOfStay = value;
     }
     
     

@@ -30,7 +30,7 @@
 			<xsd:element maxOccurs="unbounded" name="employee" type="Employee" />
 			<xsd:element maxOccurs="unbounded" name="catalog" type="Catalog" />
 			<xsd:element maxOccurs="unbounded" name="reservation" type="Reservation" /> 
-			<xsd:element maxOccurs="unbounded" name="location" type="Location" />
+			<xsd:element maxOccurs="unbounded" name="carPark" type="carPark" />
 			<xsd:element maxOccurs="unbounded" name="insurance" type="Insurance" />
 			<xsd:element maxOccurs="unbounded" name="lending" type="Lending" />
 			<xsd:element maxOccurs="unbounded" name="payment" type="Payment" />
@@ -49,8 +49,8 @@
 		
 		<!-- an attribute,named,       of the type  --> 
 			<xsd:element name="hotelID" type="xsd:string" />
-			<xsd:element name="make" type="xsd:string" />
-			<xsd:element name="model" type="xsd:string" />
+			<xsd:element name="carPark" type="xsd:string" />
+			<xsd:element name="manager" type="xsd:string" />
 			<xsd:element name="transmission" type="xsd:string" />
 			<xsd:element name="noOfDoors" type="xsd:int" />
 			<xsd:element name="fuelType" type="xsd:string" />
@@ -86,9 +86,9 @@
 	<xsd:complexType name="Catalog">
 		<xsd:sequence>
 			<xsd:element name="catalogID" type="xsd:string" />
-			<xsd:element name="make" type="xsd:string" />
-			<xsd:element name="model" type="xsd:string" />
-			<xsd:element name="location" type="xsd:string" /><!-- isbn#isbn#isbn#....... -->
+			<xsd:element name="carPark" type="xsd:string" />
+			<xsd:element name="manager" type="xsd:string" />
+			<xsd:element name="carPark" type="xsd:string" /><!-- isbn#isbn#isbn#....... -->
 		</xsd:sequence>
 	</xsd:complexType>
 	
@@ -128,7 +128,7 @@
 		</xsd:sequence>
 	</xsd:complexType>
 	
-	<xsd:complexType name="Location">
+	<xsd:complexType name="carPark">
 		<xsd:sequence>
 			<xsd:element name="address" type="xsd:string" />
 			<xsd:element name="mobileNo" type="xsd:int" />

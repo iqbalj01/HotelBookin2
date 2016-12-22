@@ -36,7 +36,7 @@ import examples.Customer;
 import examples.Employee;
 import examples.Insurance;
 import examples.Lending;
-import examples.Location;
+import examples.carPark;
 import examples.ObjectFactory;
 import examples.Payment;
 import examples.Reservation;
@@ -229,19 +229,19 @@ public class Reasoner {
 				|| input.contains("can i find")
 				|| input.contains("way to"))
 		{
-			questiontype = "location";
+			questiontype = "carPark";
 		}
 		//######################################################################################################################################
 		
 		if (input.contains("can i lend") 
-				|| input.contains("can i borrow") 
-				|| input.contains("can i get the hotel")
-				|| input.contains("am i able to") 
-				|| input.contains("could i lend") 
+				|| input.contains("can i reserve in") 
+				|| input.contains("can i get the hotel in")
+				|| input.contains("am i able to reserve in") 
+				|| input.contains("could i lend in") 
 				|| input.contains("i want to lend")
-				|| input.contains("can i rent") 
-				|| input.contains("can i Rent") 
-				|| input.contains("i want to borrow"))
+				|| input.contains("can i book in") 
+				|| input.contains("can i Book in") 
+				|| input.contains("i want to book in"))
 		{
 			questiontype = "intent";
 		}
@@ -298,7 +298,7 @@ public class Reasoner {
 				|| input.contains("who"))
 
 		{
-			questiontype = "location";
+			questiontype = "carPark";
 		}
 		//######################################################################################################################################
 		
@@ -309,41 +309,14 @@ public class Reasoner {
 			customername1 = Myface.Input.getText();
 			customername01 = customername1.substring(11);
 		}
-		//######################################################################################################################################
-
-//		if (input.contains("3 series") 
-//				|| input.contains("5 series")
-//				|| input.contains("e230")
-//				|| input.contains("sdf")
-//				|| input.contains("audi")
-//				|| input.contains("porsche")
-//				|| input.contains("e230")
-//				|| input.contains("e230")
-//				|| input.contains("e230")
-//				|| input.contains("e230")
-//				|| input.contains("c220"))
-//
-//		{
-//			questiontype = "pickmodel";
-//
-//
-//			if (input.contains("3 series")) {brand = "3series";}
-//			if (input.contains("3 series")) {brand = "3series";}									
-//			if (input.contains("e230")){brand = "e230";}
-//			if (input.contains("mercedes")){brand = "mercedes";}
-//			if (input.contains("bmw")){brand = "bmw";}
-//			if (input.contains("audi")){brand = "audi";}
-//
-//			// .... add more brands
-//
-//		}
+		
 		//######################################################################################################################################
 		
 		if (input.contains("days") 
 				|| input.contains("day"))
 
 		{
-			questiontype = "periodOfRental";
+			questiontype = "periodOfStayal";
 			daysofrental1 = Myface.Input.getText();
 
 		}
@@ -458,10 +431,10 @@ public class Reasoner {
 			}
 		}
 
-		//question regarding location
-		if (questiontype == "location") { // We always expect a pronomial question to refer to the last object questioned for
+		//question regarding carPark
+		if (questiontype == "carPark") { // We always expect a pronomial question to refer to the last object questioned for
 			answer = ("You can find the " + classtype.get(0).getClass().getSimpleName() + " " + "at "
-					+ Location(classtype, input));
+					+ carPark(classtype, input));
 			Answered = 1; // An answer was given
 		}
 		//######################################################################################################################################
@@ -483,13 +456,13 @@ public class Reasoner {
 		//######################################################################################################################################
 		
 		if (questiontype == "introduction") { // Reply to a farewell
-			answer = ("Hi " + customername01 + ", to start off do you know what type of vehicle you are after?");
+			answer = ("Hi " + customername01 + ", which city are you visiting?");
 			Answered = 1; // An answer was given
 		}
 		//######################################################################################################################################
 		
 		if (questiontype == "name") { // Reply to a farewell
-			answer = ("Hi " + customername01 + ", to start off do you know what type of vehicle you are after?");
+			answer = ("Hi " + customername01 + ", which city are you visiting?");
 			Answered = 1; // An answer was given"
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			//																														//
@@ -553,7 +526,7 @@ public class Reasoner {
 		//######################################################################################################################################
 		
 		if (questiontype == "dontknowhotel") { // Reply to a farewell
-			answer = ("Would you like to <b>view all hotels</b>, alternatively simply type the make of a hotel (i.e BMW)");
+			answer = ("Would you like to <b>view all hotels</b>, alternatively simply type the location of a hotel (i.e london)");
 			Answered = 1; // An answer was given
 		}
 		//######################################################################################################################################
@@ -567,29 +540,9 @@ public class Reasoner {
 			answer = ("Please enter your name: ");
 			Answered = 1; // An answer was given
 		}
-		//######################################################################################################################################
-		
-//		if (questiontype == "pickmodel") { // Reply to a farewell
-//			
-//			
-//			
-//			
-//			
-//			answer = ("How many days would you like to book the " + brand + " for?");
-//			//String customername = input;
-//			System.out.println(brand);
-//			URL3 = "https://soc.uwl.ac.uk/~21226018/" + brand +".html";
-//			System.out.println("URL = " + URL3);
-//			tooltipstring = readwebsite(URL3);
-//			String html = "<html>" + tooltipstring + "</html>";
-//			Myface.setmytooltip(html);
-//			Myface.setmyinfobox(URL3);
-//
-//			Answered = 1; // An answer was given
-//		}
-
-		if (questiontype == "periodOfRental") { 
-			answer = ("So, just to confirm " + customername01 + " you want to rent a " + customerchoice + " for a total of " + daysofrental1);
+	
+		if (questiontype == "periodOfStayal") { 
+			answer = ("So, just to confirm " + customername01 + " you want to book a " + customerchoice + " for a total of " + daysofrental1);
 			Answered = 1; // An answer was given
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			//																														//
@@ -612,7 +565,7 @@ public class Reasoner {
 				for (int i = 0; i < list.getLength(); i++) {
 		                   Node node = list.item(i);
 				   //updates the rental start date
-				   if ("rentalstartdate".equals(node.getNodeName())) {
+				   if ("checkIn".equals(node.getNodeName())) {
 					node.setTextContent(now().substring(0,10)); //trimming the date to only show the date rather than date + time
 				   }
 				   //updates the time stamp
@@ -620,7 +573,7 @@ public class Reasoner {
 					   node.setTextContent(now().substring(11,16));
 				   }				  
 				   //updates the amount of days of the rental
-				   if ("rentalperiodindays".equals(node.getNodeName())) {
+				   if ("stayPeriod".equals(node.getNodeName())) {
 					   node.setTextContent(daysofrental1);
 				   }
 				}
@@ -680,25 +633,25 @@ public class Reasoner {
 		Hotel curhotel = new Hotel();
 		Lending curLend = new Lending();
 		Employee curEmp = new Employee();
-		String hotelmake = "";
+		String hotellocation = "";
 
 		if (thelist == thehotelList) { //checking whether the list is equal to the hotellist
 			int counter = 0;
 			//identify which hotel is asked for
 			for (int i = 0; i < thelist.size(); i++) {
 				curhotel = (Hotel) thelist.get(i); 
-				if (input.contains(curhotel.getMake().toLowerCase()) 
-						|| input.contains(curhotel.getMake().toLowerCase())) { 
+				if (input.contains(curhotel.getlocation().toLowerCase()) 
+						|| input.contains(curhotel.getlocation().toLowerCase())) { 
 					counter = i;
 					Currentindex = counter;
 					theRecentThing.clear(); 
 					classtype = thehotelList; 
 					theRecentThing.add(classtype.get(Currentindex));
-					hotelmake = curhotel.getMake();
+					hotellocation = curhotel.getlocation();
 
-					if (input.contains(curhotel.getMake().toLowerCase())) {
-						input = input.replace(curhotel.getMake().toLowerCase(),
-								"<b>" + curhotel.getMake().toLowerCase() + "</b>");
+					if (input.contains(curhotel.getlocation().toLowerCase())) {
+						input = input.replace(curhotel.getlocation().toLowerCase(),
+								"<b>" + curhotel.getlocation().toLowerCase() + "</b>");
 					}
 					i = thelist.size() + 1; // force break
 				}
@@ -710,7 +663,7 @@ public class Reasoner {
 		if (thelist == theRecentThing && theRecentThing.get(0) != null) {
 			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("hotel")) { 
 				curhotel = (Hotel) theRecentThing.get(0); 
-				hotelmake = curhotel.getMake();
+				hotellocation = curhotel.getlocation();
 			}
 		}
 		//######################################################################################################################################
@@ -722,7 +675,7 @@ public class Reasoner {
 			if (curhotel.gethotelID().toLowerCase().equals(curlend.gethotelID().toLowerCase())) { 
 				input = input.replace(curlend.gethotelID().toLowerCase(),
 						"<b>" + curlend.gethotelID().toLowerCase() + "</b>");
-				rentduration = curlend.getPeriodOfRent();
+				rentduration = curlend.getperiodOfStay();
 				pleasework = curlend.getLendedcustomername();
 				available = false; //if the hotel's hotelID is listed in the lending list, the availability is set to false
 				System.out.println(rentduration);
@@ -746,7 +699,7 @@ public class Reasoner {
 		//if the hotel is available the answer is set as follows
 		if (available) {
 
-			answer = " How many days would you like to book the " + curhotel.getMake() + " for?";
+			answer = " How many days are staying in " + curhotel.getlocation() + " for?";
 			
 			try {
 				DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -771,8 +724,8 @@ public class Reasoner {
 		                   Node node = list.item(i);
 
 				   // updates the name attribute with the chosen hotel
-				   if ("chosenmake".equals(node.getNodeName())) {
-					node.setTextContent(curhotel.getMake());
+				   if ("chosenlocation".equals(node.getNodeName())) {
+					node.setTextContent(curhotel.getlocation());
 				   }
 				}
 
@@ -794,13 +747,13 @@ public class Reasoner {
 			   }
 
 		} else { //the user is let known that the hotel is unavailable and has been booked 
-			answer = "Sorry, " + curhotel.getMake() + " is not Available. It has been lent by " + pleasework 
+			answer = "Sorry, " + curhotel.getlocation() + " is not Available. It has been booked by " + pleasework 
 					+ " for "+ rentduration;
 					//+ "\n" ; //TODO ADD RECOMMENDATION BY TYPE OF VEHICLE*******************
 		}
 		
 		//this links to a basic html page we created which would show the user an image + description of the hotel they chose
-		URL3 = "https://soc.uwl.ac.uk/~21226018/" + curhotel.getMake().toLowerCase() +".html"; 
+		URL3 = "https://soc.uwl.ac.uk/~21226601/" + curhotel.getlocation().toLowerCase() +".html"; 
 		tooltipstring = readwebsite(URL3);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
@@ -823,7 +776,7 @@ public class Reasoner {
 		if (thelist == thehotelList) { 
 			for (int i = 0; i < thelist.size(); i++) {
 				Hotel curhotel = (Hotel) thelist.get(i); 
-				listemall = listemall + "<li>" + (curhotel.getMake() + "</li>"); 
+				listemall = listemall + "<li>" + (curhotel.getlocation() + "</li>"); 
 			}
 		}
 
@@ -858,21 +811,21 @@ public class Reasoner {
 	}
 	//######################################################################################################################################
 
-	public String ListMake(List thelist) {
-		String listmake = "<ul>";
+	public String Listlocation(List thelist) {
+		String listlocation = "<ul>";
 		if (thelist == thehotelList) { 
 			for (int i = 0; i < thelist.size(); i++) {
 				Hotel curhotel = (Hotel) thelist.get(i); 
-				if(curhotel.getMake().equals("BMW")){ //THIS IS THE LINE YOU ARE MISSING
-					listmake = listmake + "<li>" + (curhotel.getModel() + "</li>"); 
+				if(curhotel.getlocation().equals("london")){ //THIS IS THE LINE YOU ARE MISSING
+					listlocation = listlocation + "<li>" + (curhotel.getmanager() + "</li>"); 
 				}
 			}
 		}
-		listmake += "</ul>";
+		listlocation += "</ul>";
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
 
-		return listmake;
+		return listlocation;
 	}
 	//######################################################################################################################################
 	
@@ -890,11 +843,11 @@ public class Reasoner {
 		if (thelist == thehotelList) { 
 			for (int i = 0; i < thelist.size(); i++) {
 				Hotel curhotel = (Hotel) thelist.get(i); 
-				if (input.contains(curhotel.getMake().toLowerCase()) 
+				if (input.contains(curhotel.getlocation().toLowerCase()) 
 						|| input.contains(curhotel.gethotelID().toLowerCase()) 
-						|| input.contains(curhotel.getMake().toLowerCase())) { 
+						|| input.contains(curhotel.getlocation().toLowerCase())) { 
 					counter = i;
-					yesorno.set(0, "Yes we have " + curhotel.getMake());
+					yesorno.set(0, "Yes we have " + curhotel.getlocation());
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1; // force break
 				}
@@ -922,7 +875,7 @@ public class Reasoner {
 			for (int i = 0; i < thelist.size(); i++) {
 				Catalog curcat = (Catalog) thelist.get(i); 
 				if (input.contains(curcat.getCatalogID().toLowerCase()) 
-						|| input.contains(curcat.getModel().toLowerCase())) { 
+						|| input.contains(curcat.getmanager().toLowerCase())) { 
 					counter = i;
 					yesorno.set(0, "Yes we have such a Catalog"); 
 					yesorno.add(counter.toString());
@@ -959,27 +912,27 @@ public class Reasoner {
 		return yesorno;
 	}
 
-	// Method to retrieve the location information of the object (Where is...) kind
-	public String Location(List classtypelist, String input) {
+	// Method to retrieve the carPark information of the object (Where is...) kind
+	public String carPark(List classtypelist, String input) {
 		List thelist = classtypelist;
-		String location = "";
+		String carPark = "";
 		//this is a reference to IT
 		if (thelist == theRecentThing && theRecentThing.get(0) != null) {
 			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("hotel")) { 
 				Hotel curhotel = (Hotel) theRecentThing.get(0);
-				location = (curhotel.getLocation()); 
+				carPark = (curhotel.getcarPark()); 
 			}
 
 			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("member")) { 
 
 				Customer curmem = (Customer) theRecentThing.get(0); 
-				location = (curmem.getAddress() + " " + curmem.getMobileNo() + " " + curmem 
+				carPark = (curmem.getAddress() + " " + curmem.getMobileNo() + " " + curmem 
 						.getEmail()); 
 			}
 
 			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("hotel")) {
 
-				location = (ourrental.getCity() + " " + ourrental.getAddress() + ourrental 
+				carPark = (ourrental.getCity() + " " + ourrental.getAddress() + ourrental 
 						.getPostcode()); 
 			}
 
@@ -996,9 +949,9 @@ public class Reasoner {
 
 					Hotel curhotel = (Hotel) thelist.get(i); 
 
-					if (input.contains(curhotel.getMake().toLowerCase())
+					if (input.contains(curhotel.getlocation().toLowerCase())
 							|| input.contains(curhotel.gethotelID().toLowerCase()) 
-							|| input.contains(curhotel.getMake().toLowerCase())) { 
+							|| input.contains(curhotel.getlocation().toLowerCase())) { 
 						counter = i;
 
 						Currentindex = counter;
@@ -1020,7 +973,7 @@ public class Reasoner {
 							|| input.contains(curmember.getSName().toLowerCase()) 
 							|| input.contains(curmember.getCustomerID().toLowerCase())) {
 						counter = i;
-						location = (curmember.getAddress() + " ");
+						carPark = (curmember.getAddress() + " ");
 						Currentindex = counter;
 						theRecentThing.clear(); 
 						classtype = theEmployeeList; 
@@ -1036,14 +989,14 @@ public class Reasoner {
 			
 			if (thelist == ourrentalList) {
 
-				location = (ourrental.getCity() + " " + ourrental.getAddress() + ourrental 
+				carPark = (ourrental.getCity() + " " + ourrental.getAddress() + ourrental 
 						.getPostcode());
 			}
 		}
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
 
-		return location;
+		return carPark;
 	}
 	//######################################################################################################################################
 	
@@ -1054,11 +1007,11 @@ public class Reasoner {
 		for (int i = 0; i < thehotelList.size(); i++) { // check each hotel in the List,
 
 			Hotel curhotel = (Hotel) thehotelList.get(i); // cast list element to hotel Class
-			System.out.println("hotel: " + curhotel.getMake());
+			System.out.println("hotel: " + curhotel.getlocation());
 
-			if (curhotel.getMake().equalsIgnoreCase("dostoyjewski")) { // check for the author
-				answer = "A hotel written by " + curhotel.getMake() + "\n" 
-						+ " is for example the classic " + curhotel.getMake() 
+			if (curhotel.getlocation().equalsIgnoreCase("dostoyjewski")) { // check for the author
+				answer = "A hotel written by " + curhotel.getlocation() + "\n" 
+						+ " is for example the classic " + curhotel.getlocation() 
 						+ ".";
 			}
 		}

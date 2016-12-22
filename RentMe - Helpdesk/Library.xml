@@ -7,112 +7,112 @@
 	<address> 19 Wilsons Road</address>
 	<postcode>SW17 9AY</postcode>
 
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>12345</hotelID>              <!-- And its attributes -->
-		<make>BMW</make>
-		<model> 3 Series </model>
+	<hotel>                                       
+		<hotelID>12345</hotelID>              
 		<location>London</location>
+		<manager> 3 Series </manager>
+		<carPark>L1</carPark>
+		<type>grand</type> 
+	</hotel>
+	<hotel>                                       
+		<hotelID>12345</hotelID>              
+		<location>Manchester</location>
+		<manager>Katie</manager>
+		<carPark>M1</carPark>
 		<type>saloon</type> 
 	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>12345</hotelID>              <!-- And its attributes -->
-		<make>BMW</make>
-		<model> 5 Series </model>
-		<location>london</location>
-		<type>saloon</type> 
+	<hotel>                                       
+		<hotelID>21111</hotelID>              
+		<location>Birmingham</location>
+		<manager>Jessica </manager>
+		<carPark>B1</carPark>
 	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>21111</hotelID>              <!-- And its attributes -->
-		<make>Mercedes</make>
-		<model> E230 </model>
-		<location>london</location>
-	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>21215</hotelID>              <!-- And its attributes -->
-		<make>Mercedes</make>
-		<model> C220 </model>
-		<location>london</location>
+	<hotel>                                      
+		<hotelID>21215</hotelID>             
+		<location>Paris</location>
+		<manager> Laura </manager>
+		<carPark>P22</carPark>
 	</hotel>
 	<hotel>                                       <!-- An Instance of a hotel -->
 		<hotelID>12554</hotelID>              <!-- And its attributes -->
-		<make>Ford</make>
-		<model> Fiesta </model>
-		<location>london</location>
+		<location>Amsterdam</location>
+		<manager>Robert</manager>
+		<carPark>Dam1</carPark>
 	</hotel>
 	<hotel>                                       <!-- An Instance of a hotel -->
 		<hotelID>18944</hotelID>              <!-- And its attributes -->
-		<make>Audi</make>
-		<model> Astra </model>
-		<location>london</location>
+		<location>Liverpool</location>
+		<manager>Hamed </manager>
+		<carPark>Liv1</carPark>
 	</hotel>
 	<hotel>                                       <!-- An Instance of a hotel -->
 		<hotelID>14444</hotelID>              <!-- And its attributes -->
-		<make>Volkswagen</make>
-		<model> Polo </model>
-		<location>london</location>
+		<location>Brighton</location>
+		<manager>Pogba</manager>
+		<carPark>B12</carPark>
 	</hotel>
 	<hotel>                                       <!-- An Instance of a hotel -->
 		<hotelID>22344</hotelID>              <!-- And its attributes -->
-		<make>Nissan</make>
-		<model> Micra </model>
-		<location>london</location>
+		<location>Luton</location>
+		<manager>Sanchez </manager>
+		<carPark>Lut01</carPark>
 	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>12856</hotelID>              <!-- And its attributes -->
-		<make>Citren</make>
-		<model> C5 </model>
-		<location>london</location>
+	<hotel>                                       
+		<hotelID>12856</hotelID>              
+		<location>Milton Keynes</location>
+		<manager>Arsene </manager>
+		<carPark>MKK1</carPark>
 	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>14754</hotelID>              <!-- And its attributes -->
-		<make>Porsche</make>
-		<model> 911 </model>
-		<location>london</location>
+	<hotel>                                       
+		<hotelID>14754</hotelID>            
+		<location>Bristol</location>
+		<manager> Johnny </manager>
+		<carPark>Bris1</carPark>
 	</hotel>
-	<hotel>                                       <!-- An Instance of a hotel -->
-		<hotelID>16944</hotelID>              <!-- And its attributes -->
-		<make>Skoda</make>
-		<model> Octovia </model>
-		<location>london</location>
+	<hotel>                                      
+		<hotelID>16944</hotelID>              
+		<location>Dublin</location>
+		<manager> Chloe </manager>
+		<carPark>DB2</carPark>
 	</hotel>
 	
-<!-- This is where Lending starts -->
+<!-- This is where Booking is initiated -->
 	<lending>
 		<hotelID>12345</hotelID>
 		<lendid>001</lendid>
 		<dateOfStart>11/01/2016</dateOfStart>
 		<dateOfEnd>16/01/2016</dateOfEnd>
-		<periodOfRent>5 Days</periodOfRent>
-		<customername>John Smith</customername>
+		<periodOfStay>5 Days</periodOfStay>
+		<customername>Junaid Iqbal</customername>
 	</lending>
 	
 	<lending>
 		<lendid>002</lendid>
 		<dateOfStart>2011</dateOfStart>
 		<dateOfEnd>2012</dateOfEnd>
-		<periodOfRent>2 Days</periodOfRent>
-		<customername>John Smith</customername>
+		<periodOfStay>2 Days</periodOfStay>
+		<customername>Junaid Iqbal</customername>
 		<hotelID>18944</hotelID>
 	</lending>
 
 
-<!-- This is where employee starts -->	
+<!-- This is where employee begins -->	
 	<customer>
-		<FName> Jonni </FName>
-		<SName> Asfaha</SName>
+		<FName> Mogid </FName>
+		<SName> Mccain</SName>
 		
 
-		<Address> 44 test Street</Address>
+		<Address> 44 bleeke Street</Address>
 		<DOB>44/12/2016 </DOB>
 		<hotelID>12345</hotelID>
-		<Email> ww@hotmail.co.uk</Email>
-		<Postcode>sl1 2ee </Postcode>
-		<MobileNo> 07866552266 </MobileNo>
+		<Email> W1@hotmail.co.uk</Email>
+		<Postcode>W1 5rf </Postcode>
+		<MobileNo> 078898878986 </MobileNo>
 		
 	</customer>
 
 
-<!-- This is where employee starts -->		
+<!-- This is where employee begins -->		
 	<Employee>
 		<employeeID>21226018</employeeID>
 		<fName>John</fName>
@@ -123,12 +123,12 @@
 	
 	
 	<reservation>
-		<customers id="abdul2016-01-11-23-20">
-			<name>abdul</name>
-			<chosenmake>Ford</chosenmake>
-			<rentalstartdate>11-01-2016</rentalstartdate>
+		<customers id="junaid2016-12-22-18-20">
+			<name>tahmid</name>
+			<chosenlocation>Ford</chosenlocation>
+			<checkIn>11-01-2016</checkIn>
 			<timestamp>23:20</timestamp>
-			<rentalperiodindays>3 days</rentalperiodindays>
+			<stayPeriod>3 days</stayPeriod>
 		</customers>
 	</reservation>
 </hotelRental><!-- closing the one libraryobject conatining alle the info -->

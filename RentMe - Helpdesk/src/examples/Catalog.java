@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="catalogID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="make" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="manager" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="carPark" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Catalog", propOrder = {
     "catalogID",
-    "make", 
-    "model",
-    "location" /* this is the location*/
+    "location",
+    "manager",
+    "carPark"
 })
 public class Catalog {
 
     @XmlElement(required = true)
     protected String catalogID;
     @XmlElement(required = true)
-    protected String make;
-    @XmlElement(required = true)
-    protected String model;
-    @XmlElement(required = true)
     protected String location;
+    @XmlElement(required = true)
+    protected String manager;
+    @XmlElement(required = true)
+    protected String carPark;
 
     /**
      * Gets the value of the catalogID property.
@@ -79,54 +79,6 @@ public class Catalog {
     }
 
     /**
-     * Gets the value of the make property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMake() {
-        return make;
-    }
-
-    /**
-     * Sets the value of the make property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMake(String value) {
-        this.make = value;
-    }
-
-    /**
-     * Gets the value of the model property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModel() {
-        return model;
-    }
-
-    /**
-     * Sets the value of the model property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModel(String value) {
-        this.model = value;
-    }
-
-    /**
      * Gets the value of the location property.
      * 
      * @return
@@ -134,7 +86,7 @@ public class Catalog {
      *     {@link String }
      *     
      */
-    public String getLocation() {
+    public String getlocation() {
         return location;
     }
 
@@ -146,8 +98,56 @@ public class Catalog {
      *     {@link String }
      *     
      */
-    public void setLocation(String value) {
+    public void setlocation(String value) {
         this.location = value;
+    }
+
+    /**
+     * Gets the value of the manager property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getmanager() {
+        return manager;
+    }
+
+    /**
+     * Sets the value of the manager property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setmanager(String value) {
+        this.manager = value;
+    }
+
+    /**
+     * Gets the value of the carPark property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getcarPark() {
+        return carPark;
+    }
+
+    /**
+     * Sets the value of the carPark property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setcarPark(String value) {
+        this.carPark = value;
     }
 
 }

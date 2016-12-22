@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="hotelID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="make" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="manager" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="transmission" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="noOfDoors" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="fuelType" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="noOfSeats" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="islend" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="carPark" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -45,24 +45,24 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "hotel", propOrder = {
     "hotelID",
-    "make",
-    "model",
+    "location",
+    "manager",
     "transmission",
     "noOfDoors",
     "fuelType",
     "noOfSeats",
     "islend",
     "type",
-    "location"
+    "carPark"
 })
 public class Hotel {
 
     @XmlElement(required = true)
     protected String hotelID;
     @XmlElement(required = true)
-    protected String make;
+    protected String location;
     @XmlElement(required = true)
-    protected String model;
+    protected String manager;
     @XmlElement(required = true)
     protected String transmission;
     protected int noOfDoors;
@@ -74,7 +74,7 @@ public class Hotel {
     @XmlElement(required = true)
     protected String type;
     @XmlElement(required = true)
-    protected String location;
+    protected String carPark;
 
     /**
      * Gets the value of the hotelID property.
@@ -101,7 +101,7 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the make property.
+     * Gets the value of the location property.
      * 
      * @return
      *     possible object is
@@ -134,51 +134,51 @@ public class Hotel {
     }
 
     /**
-     * Gets the value of the make property.
+     * Gets the value of the location property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMake() {
-        return make;
+    public String getlocation() {
+        return location;
     }
 
     /**
-     * Sets the value of the make property.
+     * Sets the value of the location property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMake(String value) {
-        this.make = value;
+    public void setlocation(String value) {
+        this.location = value;
     }
 
     /**
-     * Gets the value of the model property.
+     * Gets the value of the manager property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getModel() {
-        return model;
+    public String getmanager() {
+        return manager;
     }
 
     /**
-     * Sets the value of the model property.
+     * Sets the value of the manager property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setModel(String value) {
-        this.model = value;
+    public void setmanager(String value) {
+        this.manager = value;
     }
 
     /**
@@ -285,7 +285,7 @@ public class Hotel {
         this.type = value;
     }
 
-    public String getLocation() {
+    public String getcarPark() {
         return type;
     }
 
@@ -297,7 +297,7 @@ public class Hotel {
      *     {@link String }
      *     
      */
-    public void setLocation(String value) {
+    public void setcarPark(String value) {
         this.type = value;
     }
 

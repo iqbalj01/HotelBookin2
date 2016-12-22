@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="employee" type="{}Employee" maxOccurs="unbounded"/>
  *         &lt;element name="catalog" type="{}Catalog" maxOccurs="unbounded"/>
  *         &lt;element name="reservation" type="{}Reservation" maxOccurs="unbounded"/>
- *         &lt;element name="location" type="{}Location" maxOccurs="unbounded"/>
+ *         &lt;element name="carPark" type="{}carPark" maxOccurs="unbounded"/>
  *         &lt;element name="insurance" type="{}Insurance" maxOccurs="unbounded"/>
  *         &lt;element name="lending" type="{}Lending" maxOccurs="unbounded"/>
  *         &lt;element name="payment" type="{}Payment" maxOccurs="unbounded"/>
@@ -60,7 +60,7 @@ import javax.xml.bind.annotation.XmlType;
     "employee",
     "catalog",
     "reservation",
-    "location",
+    "carPark",
     "insurance",
     "lending",
     "payment"
@@ -88,7 +88,7 @@ public class HotelRental {
     @XmlElement(required = true)
     protected List<Reservation> reservation;
     @XmlElement(required = true)
-    protected List<Location> location;
+    protected List<carPark> carPark;
     @XmlElement(required = true)
     protected List<Insurance> insurance;
     @XmlElement(required = true)
@@ -221,7 +221,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the hotel property.
      * 
@@ -250,7 +250,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the customer property.
      * 
@@ -279,7 +279,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the employee property.
      * 
@@ -308,7 +308,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the catalog property.
      * 
@@ -337,7 +337,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the reservation property.
      * 
@@ -362,32 +362,32 @@ public class HotelRental {
     }
 
     /**
-     * Gets the value of the location property.
+     * Gets the value of the carPark property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the location property.
+     * This is why there is not a <CODE>set</CODE> method for the carPark property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLocation().add(newItem);
+     *    getcarPark().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Location }
+     * {@link carPark }
      * 
      * 
      */
-    public List<Location> getLocation() {
-        if (location == null) {
-            location = new ArrayList<Location>();
+    public List<carPark> getcarPark() {
+        if (carPark == null) {
+            carPark = new ArrayList<carPark>();
         }
-        return this.location;
+        return this.carPark;
     }
 
     /**
@@ -395,7 +395,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the insurance property.
      * 
@@ -424,7 +424,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the lending property.
      * 
@@ -453,7 +453,7 @@ public class HotelRental {
      * 
      * <p>
      * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
+     * not a snapshot. Therefore any modification you location to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the payment property.
      * 

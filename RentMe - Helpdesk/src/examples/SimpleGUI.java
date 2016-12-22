@@ -68,11 +68,11 @@ public class SimpleGUI {
 		Outframe.add(Scroll);
 		Outframe.add(ScrollInfo);
 
-		JFrame Main = new JFrame("Guidance for hotel Rental"); // our main frame
+		JFrame Main = new JFrame("Guidance for hotel booking "); // our main frame
 
 		try {
 			Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File(
-					"test.png")))));
+					"bg.jpg")))));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -99,12 +99,12 @@ public class SimpleGUI {
 		});
 
 		Main.pack();
-		Main.setSize(1500, 4000);
+		Main.setSize(1500, 900);
 		Main.setVisible(true); // Don't forget
 
 		dialoghistory
-				.add("<H2>Welcome to RentMe, you're virtual hotel hire helpdesk</H2> "
-						+ "<H3>I can assist you in booking a vehicle, to start off what type of vehicle would you like to book?</H3><br>");
+				.add("<H2>Welcome to Travelodge, you're virtual hotel boking helpdesk</H2> "
+						+ "<H3>I can assist you in booking a room, to start off what type of room would you like to book?</H3><br>");
 
 		Output.setText(dialoghistory.firstElement());
 		Input.requestFocusInWindow();
@@ -174,10 +174,10 @@ public class SimpleGUI {
 
 	}
 
-	public static void main(String[] args) { // main Method (starts when
-												// class/instance is called)
+	public static void main(String[] args) { 
+		
 		SimpleGUI mygui = new SimpleGUI();
-		mygui.checkbrain(); // check if brain is there and knowledge loaded
+		mygui.checkbrain(); 
 
 	}
 }
